@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const tweets = [
+        { id: "000", likes: 5, tags: ["js", "nodejs"] },
+        { id: "001", likes: 2, tags: ["html", "css"] },
+        { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+        { id: "003", likes: 8, tags: ["css", "react"] },
+        { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+      ];
+
+      const tagCount = tweets.reduce((accumulator, tweet) => {
+        tweet.tags.forEach((tag) => {
+          if (acc.hasOwnProperty(tag)) {
+            accumulator[tag] += 1;
+          } else {
+            accumulator[tag] = 1;
+          }
+        });
+        return accumulator;
+      }, {});
+
+      console.log(tagCount);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Storage(productArray) {
+        this.items = productArray;
+
+        this.getItems = function () {
+          return this.items;
+        };
+
+        this.addItem = function (item) {
+          this.items.push(item);
+        };
+
+        this.removeItem = function (item) {
+          if (this.items.includes(item)) {
+            this.items.splice(this.items.indexOf(item), 1);
+          }
+        };
+      }
+
+      const arr = ["apple", "banana", "mango"];
+      const storage = new Storage(arr);
+      console.log(`Initial array: ${storage.getItems()}`);
+      storage.addItem("orange");
+      console.log(`The array after adding the orange: ${storage.getItems()}`);
+      storage.removeItem("apple");
+      console.log(`The array after deleting the apple: ${storage.getItems()}`);
+      console.log(storage.getItems());
+    </script>
+  </body>
+</html>

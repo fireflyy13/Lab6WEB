@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function checkBrackets(str) {
+        const brackets = { "(": ")", "{": "}", "[": "]" };
+        const stack = [];
+        let i;
+        let n = str.length;
+        for (i = 0; i < n; i++) {
+          if (str[i] in brackets) {
+            stack.push(str[i]);
+          } else if (Object.values(brackets).includes(str[i])) {
+            const lastBracket = stack.pop();
+            if (brackets[lastBracket] !== str[i]) {
+              return false;
+            }
+          }
+        }
+        return stack.length === 0;
+      }
+
+      let str = prompt(
+        "What string would you like to check for correctness of brackets?"
+      );
+      let result = checkBrackets(str);
+      console.log(result);
+    </script>
+  </body>
+</html>

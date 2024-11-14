@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function successCallback(productId) {
+        return `Product with ID ${productId} is found successfully!`;
+      }
+
+      function errorCallback(productId) {
+        return `Error: Unable to find a product with ID ${productId}!`;
+      }
+
+      function getProductDetails(productId, successCallback, errorCallback) {
+        console.log("Details about the product were received.");
+        if (isNaN(productId)) {
+          console.log(errorCallback(productId));
+        } else {
+          console.log(successCallback(productId));
+        }
+      }
+
+      let productId = Number(prompt("Enter ID:"));
+      getProductDetails(productId, successCallback, errorCallback);
+    </script>
+  </body>
+</html>
