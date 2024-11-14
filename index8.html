@@ -27,11 +27,13 @@
 
       const arr = ["apple", "banana", "mango"];
       const storage = new Storage(arr);
-      console.log(`Initial array: ${storage.getItems()}`);
+      console.log("Initial array:");
+      console.log(storage.getItems());
       storage.addItem("orange");
-      console.log(`The array after adding the orange: ${storage.getItems()}`);
+      console.log("The array after adding the orange:");
+      console.log(storage.getItems());
       storage.removeItem("apple");
-      console.log(`The array after deleting the apple: ${storage.getItems()}`);
+      console.log("The array after deleting the apple:");
       console.log(storage.getItems());
     </script>
   </body>

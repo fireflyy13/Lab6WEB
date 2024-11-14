@@ -17,7 +17,7 @@
 
       const tagCount = tweets.reduce((accumulator, tweet) => {
         tweet.tags.forEach((tag) => {
-          if (acc.hasOwnProperty(tag)) {
+          if (accumulator.hasOwnProperty(tag)) {
             accumulator[tag] += 1;
           } else {
             accumulator[tag] = 1;

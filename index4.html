@@ -17,7 +17,6 @@
       };
 
       let citiesArray = Object.keys(concerts);
-      console.log(citiesArray);
       let today = new Date();
       citiesArray.forEach((key, value) => {
         if (concerts[key] < today && citiesArray.includes(key)) {
@@ -26,6 +25,7 @@
       });
 
       citiesArray.sort((a, b) => concerts[a] - concerts[b]);
+      console.log("Array with sorted cities where concert is upcoming:");
       console.log(citiesArray);
     </script>
   </body>
